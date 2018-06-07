@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
-# Use sqlite3 as the database for Active Record
-gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -61,7 +59,23 @@ end
 #declared inside a development/test block to ensure that it only compiles in the development or test environments
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.6' #for testing in rails 
+  gem "factory_bot_rails", "~> 4.0"
 end
 
-#for yooming in the product page
+#for zooming in the product page
 gem 'elevatezoom-rails'
+
+#for sending emails through sndgrid 
+gem 'sendgrid-ruby'
+gem 'devise'
+#CanCanCan is an authorization library for Ruby which restricts what resources a given user is allowed to access.
+gem 'cancancan', '~> 2.0'
+# for pagination purpose...
+gem 'will_paginate', '~> 3.1.1'
+#The rails-controller-testing gem provides the assigns and assert_template
+gem 'rails-controller-testing'
+#for payments etc
+gem 'stripe'
+gem 'dalli'
+gem 'redis-rails'

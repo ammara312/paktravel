@@ -12,11 +12,16 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+    @products = @products.paginate(:page => params[:page], :per_page => 9)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    # (byebug)
+    @product = Product.find(params[:id])
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+    @product.viewed!
   end
 
   # GET /products/new

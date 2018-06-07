@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font-stack: 'Roboto', cursive,helvetica, arial, sans-serif;
+
 .welcome{
 	color: #bfbfbf;
   text-shadow: 4px 4px #e4e4e4;
   text-align: center;
-  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+  font-family: $font-stack;
 }
 
 .navbar{
@@ -16,7 +18,7 @@
 .projectname{
 	text-transform: uppercase;
 	letter-spacing: 0.5em;
-	font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+	font-family: $font-stack;
 	color: #696969;
 	font-weight: 900; 
 
@@ -41,7 +43,7 @@
 	color: white;
 	text-decoration: none;
 	font-size: 14px;
-  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+  font-family: $font-stack;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -140,8 +142,9 @@ textarea.form-control.message-box{
 
 }
 
-
-
+.main-caro{
+  width:100%;
+}
 
 
 

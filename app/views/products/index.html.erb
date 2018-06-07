@@ -1,12 +1,23 @@
-<p id="notice"><%= notice %></p>
-<br>
+<div class="add-new-btnProduct">
+  <% if current_user && current_user.admin? %>
+    <%= link_to "Add New Product", new_product_path, class: "btn btn-primary btn-colr" %>
+  <% end %>
+</div>
+
 <h1 class="product-header">Our Specialities</h1><br><br>
 <div class="container">
   <div class="row">
-    <%= render @products %>
+<!--     Russian doll caching  -->
+    <% cache(cache_key_for_products) do %>
+      <%= render @products %>
+    <% end %>
+
   </div>  <!-- end Row -->
 </div>  <!-- end Container -->
 <br>
 
-<%= link_to 'New Product', new_product_path %>
-<%= link_to "Show Product", product_path(3) %>
+<!-- to limit the products shown on one page -->
+<div class="pagination flickr_pagination">
+  <%= will_paginate @products %> 
+</div><br>
+

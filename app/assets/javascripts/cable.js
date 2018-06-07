@@ -5,6 +5,8 @@
 //= require_self
 //= require_tree ./channels
 
+//reate a consumer, thus initializing the ActionCable WebSocket connection 
+//	whenever somebody accesses your app.
 (function() {
   this.App || (this.App = {});
 

@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- We'll link our Bootstrap JavaScript file, as well, after the javascript_include_tag because Bootstrap depends on jQuery, which is loaded with all the other JavaScript
- -->
+    -->
  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  		<meta name="viewport" content="width=device-width, initial-scale=1">
  		<!-- For social media button -->
@@ -15,7 +15,7 @@
     <%= csrf_meta_tags %>
 	</head>
 
- <body>
+  <body>
 		<nav class="navbar navbar-default navbar-fixed-top main-navbar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +26,7 @@
 		        <span class="icon-bar"></span>	
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand projectname Paktravel" href="#">@ Pak Travel</a>
+		      <a class="navbar-brand projectname foodie" href="#">@ Foodie</a>
 		    </div>
 		    <!-- for image -->
 		    <!--  <a class="navbar-brand" href="#">
@@ -48,14 +48,23 @@
 		            <li><a href="#">Separated link</a></li>   
 		          </ul>
 		        </li> -->
-				    <li><%= link_to 'Tour Packages', products_path %></li>	
+				    <li><%= link_to 'Products', products_path %></li>	
 		        <li><a href="#">Parties</a></li>
-		        <li><%= link_to 'About Us',static_pages_about_path %></li>
-		 				<li><%= link_to 'Contact Us',static_pages_contact_path %></li>
+		        <li><%= link_to 'About',static_pages_about_path %></li>
+		 				<li><%= link_to 'Contact',static_pages_contact_path %></li>
 		        <li><a href="#">FAQ</a></li>
-            <li><a href="#">Login</a></li>
+              <!-- In the example, if someone is logged in, they'll see a link to sign out. If no one is logged in, they'll see a link to sign in -->
+            <ul class="nav navbar-nav navbar-right pull-right">
+             <% if user_signed_in? %>
+              <li><%= link_to 'Edit', edit_user_registration_path %></li> 
+              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+             <% else %>
+               <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+               <li><%= link_to('Login', new_user_session_path) %></li>
+             <% end %>
+            </ul>
 		      </ul>
-
+          
       <%= form_with(url: products_path, method: 'get', class:"navbar-form navbar-right search-form",local: true) do |form| %>
           <%= form.text_field :q, id: 'q', value: params[:q], placeholder:'Search...', class: "form-control search-box"%>
 <!--           <%= form.submit 'Search', class: "btn btn-success btn-padding" %>
@@ -68,26 +77,37 @@
 		</div><!-- /.container-fluid -->
 		</nav>
 
+    <!-- Add the flash notice tags to somewhere at the top of your application.html.erb template (above or below your navigation, maybe). This block will display a welcome message when you sign in -->
+    <% if notice %>
+      <div class="alert alert-info alert-message">
+        <%= notice %>
+      </div>
+    <% elsif alert %>
+    <div class="alert alert-warning alert-dismissible alert-message" role = "alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+      <%= alert %>
+    </div>
+    <% end %>
+
     <%= yield %>
 
     <div class="bodypadding"></div>
+  <!--<div class="container"></div> -->
 		<!-- Start Footer -->
 		<footer id="footer">
 			<div class="container text-center">
 				<div class="row footerrow">
 					<div class="col-lg-12 footer-menu">
 						<span class="pull-left">Copyright © 2017 @Foodie. All Rights Reserved. | Made by <a href="http://smartsoftwares.de"> Ammara Irfan</a></span>		
-		          <span class="pull-right">
-		            <%= link_to 'Home',root_path %>
-			        	<%= link_to 'Products', products_path %>
-			        	<a href="#">Catering</a>
-			        	<a href="#">Parties</a>
-				        <%= link_to 'About',static_pages_about_path %>
-				 				<%= link_to 'Contact',static_pages_contact_path %>
-				        <a href="#">FAQ</a>
-
-
-		          </span>
+	          <span class="pull-right">
+	            <%= link_to 'Home',root_path %>
+		        	<%= link_to 'Products', products_path %>
+		        	<a href="#">Catering</a>
+		        	<a href="#">Parties</a>
+			        <%= link_to 'About',static_pages_about_path %>
+			 				<%= link_to 'Contact',static_pages_contact_path %>
+			        <a href="#">FAQ</a>
+	          </span>
 					</div>
 				</div>
 				<!-- 		<a href="https://www.facebook.com/ammara.inayat" class="fa fa-facebook icon"></a>

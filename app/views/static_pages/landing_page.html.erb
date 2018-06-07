@@ -14,8 +14,8 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
    	<% @products.each do |product| %>
-   	<div class="item<%= " active" if product == @products.first %>">
-    	<%= image_tag(product.image_url) %>
+   	<div class="main-caro item<%= " active" if product == @products.first %>">
+    	<%= image_tag((product.image_url),:class => "main-caro") %>
     	<div class="carousel-caption">
     		<%= product.name %>
       </div>
@@ -33,7 +33,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<%= params[:example_key].to_i * 10 %>
 
 

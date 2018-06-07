@@ -1,18 +1,51 @@
-<p id="notice"><%= notice %></p>
-<div class="container-fluid">
-  <div class="row product-row">
-    <div class="col-xs-12 col-md-6">
-      <%= image_tag(@product.image_url, class: "img-responsive") %>
-    </div> <!-- end column -->
-    <div class="col-xs-12 col-md-6">
-      <h1 class="product_title"><%= @product.name %></h1>
-      <div><p><%= @product.description %></p></div>
-      <div><p><%= @product.price %>  €</p></div>
-    </div>
+<div class="container product-container">
+
+  <div class="row product-row" data-product-id="<%= @product.id %>">
+    <% cache @product do %>
+      <div class="col-xs-12 col-md-6 thumbnail">
+        <%= image_tag(@product.image_url, class: "img-responsive zoom-image", data_zoom_image: @product.image_url) %>
+      </div> <!-- end column -->
+      <div class="col-xs-12 col-md-6">
+        <h1 class="product_title"><%= @product.name %></h1>
+        <div><p><%= @product.description %></p></div>
+        <div><p>Views: <%= @product.views%></p></div>
+        <div><p><%= @product.price %>  €</p></div>
+        <p>Average Rating: <div class="rated" id = "average-rating" data-score="<%= @product.average_rating %>"></div> </p>
+        <div><h5> Views:
+          <span class="badge"> <%= @product.views%></span>
+        </h5></div>
+
+        <%#= add a new form element and render the Stripe button partial inside it for payment%>
+
+          <%= form_tag('/payments/create', method: :post) do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
+      </div>
+    <% end %>  
   </div> <!-- end row -->
-</div> <!-- end container -->
+  
+  <div class="product-show-btn">
+    <%= link_to 'Back', products_path, class: "btn btn-primary btn-colr" %>
+    <% if current_user && current_user.admin? %>
+      <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-primary btn-colr' %>
+      <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-colr' %>
+    <%end %> <!--  end cache -->
+    <br>
+  </div>
 
+  <%#= <%= @product.highest_rating_comment %>
+  <%#= %= @product.lowest_rating_comment %>
 
+  <!-- This partial will display a form for creating a new comment on a product (if a user is signed in) -->
+  <%= render 'new_comment' %>
+  <!-- alert for the new mesage posted just like a chat  -->
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <!-- And then we can add another partial which will display the listing of reviews-->
+  <%= render 'comments' %>
+  <!-- for comments pagination-->  
+  <div class="pagination flickr_pagination">
+    <%= will_paginate @comments %>
+  </div> <!-- end container -->
+
+</div>

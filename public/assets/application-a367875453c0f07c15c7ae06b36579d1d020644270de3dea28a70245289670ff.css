@@ -1,0 +1,530 @@
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/raty.eot");
+  src: url("fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/raty.svg#raty") format("svg");
+  src: url("fonts/raty.ttf") format("truetype");
+  src: url("fonts/raty.woff") format("woff");
+}
+
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+.star-on-png:before {
+  content: "\f005";
+}
+
+.star-off-png:before {
+  content: "\f006";
+}
+
+.star-half-png:before {
+  content: "\f123";
+}
+/* line 5, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-header, .product-style h2, p {
+  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+}
+
+/* line 10, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-style {
+  padding-bottom: 30px;
+}
+
+/* line 15, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-style a:hover {
+  color: black;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+/* line 21, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-style a:visited {
+  color: black;
+}
+
+/* line 25, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-row {
+  padding-bottom: 30px;
+}
+
+/*for show page of product container*/
+/* line 30, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/*for text moving pattern*/
+/* line 37, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-style h2 {
+  font: 100 1em;
+  animation: ProductStyleAnimate 3s ease 1s 6 alternate backwards;
+}
+
+@keyframes ProductStyleAnimate {
+  100% {
+    text-indent: 10%;
+  }
+}
+/*for animation of product header */
+/* line 50, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-header {
+  text-align: center;
+  animation: ProHeaderAnimate 5s ease 1s 12 alternate forwards;
+}
+
+@keyframes ProHeaderAnimate {
+  33% {
+    text-shadow: 2px 2px 2px red;
+  }
+  66% {
+    text-shadow: -2px -2px 2px blue;
+  }
+  100% {
+    text-shadow: 0px 0px 10px green;
+  }
+}
+/* line 67, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.product-data {
+  height: 250px;
+  padding: 20px;
+  font-size: 2.5em;
+}
+
+/*to add some taste in pagination for products page and comments area
+*/
+/* line 75, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination {
+  display: block;
+  text-align: center;
+  padding: 0.3em;
+  cursor: default;
+}
+
+/* line 80, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+  padding: 0.2em 0.5em;
+}
+
+/* line 82, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .disabled {
+  color: #aaaaaa;
+}
+
+/* line 84, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  color: #ff0084;
+}
+
+/* line 88, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination a {
+  border: 1px solid #dddddd;
+  color: #0063dc;
+  text-decoration: none;
+}
+
+/* line 92, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination a:hover, .flickr_pagination a:focus {
+  border-color: #003366;
+  background: #0063dc;
+  color: white;
+}
+
+/* line 96, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .page_info {
+  color: #aaaaaa;
+  padding-top: 0.8em;
+}
+
+/* line 99, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .previous_page, .flickr_pagination .next_page {
+  border-width: 2px;
+}
+
+/* line 101, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .previous_page {
+  margin-right: 1em;
+}
+
+/* line 103, /home/inayat/Desktop/webapp/app/assets/stylesheets/products.scss */
+.flickr_pagination .next_page {
+  margin-left: 1em;
+}
+/* line 1, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /home/inayat/Desktop/webapp/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 5, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.welcome {
+  color: #bfbfbf;
+  text-shadow: 4px 4px #e4e4e4;
+  text-align: center;
+  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+}
+
+/* line 12, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.navbar {
+  background-color: black;
+}
+
+/* line 16, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.projectname {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+  color: #696969;
+  font-weight: 900;
+}
+
+/* line 25, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.foodie {
+  word-spacing: -4em;
+  animation: foodieAnimation 1s ease 1s 1 alternate forwards;
+}
+
+@keyframes foodieAnimation {
+  50% {
+    word-spacing: 4em;
+  }
+  100% {
+    word-spacing: 0em;
+  }
+}
+/* line 39, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-nav > li > a {
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+}
+
+/* line 47, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.navbar-default .navbar-nav > li > a:hover {
+  font-size: 16px;
+  background-color: black;
+  color: white;
+}
+
+/* line 53, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.projectname a:hover {
+  text-decoration: none;
+}
+
+/* line 61, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.caro-background {
+  background-color: black;
+}
+
+/* line 65, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+a.caro-hover {
+  background-color: transparent;
+}
+
+/* line 69, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+#footer {
+  background-color: #121212;
+  padding-bottom: 15px;
+}
+
+/* line 74, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+footer .footer-menu {
+  padding-top: 30px;
+  font-size: 12px;
+  font-weight: 400;
+  height: 64px;
+  color: #999;
+}
+
+/* line 82, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+footer .footer-menu a {
+  color: #999;
+  font-weight: 500;
+  margin-left: 30px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+}
+
+/* line 94, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+footer .footer-menu a:hover {
+  color: #fff;
+}
+
+/* line 98, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.footerrow {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/*for contact page............................................
+*/
+/* line 104, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.contact-form {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+/* line 109, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+textarea.form-control.message-box {
+  height: 200px;
+}
+
+/*for send message button on contact us page*/
+/* line 114, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.send-message {
+  color: #fff;
+  background-color: black;
+  border-radius: 19%;
+  border-color: #fff;
+  border: 2px dotted;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  resize: none;
+}
+
+/* line 126, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.bgthank {
+  background: url(/assets/Foodie.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 900px;
+  opacity: 0.4;
+}
+
+/* line 134, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+.thanksmsg {
+  padding-top: 60px;
+  text-align: center;
+  color: black;
+  font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  /* line 152, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+  .navbar-default .navbar-brand, .welcome {
+    font-size: 15px;
+  }
+
+  /* line 156, /home/inayat/Desktop/webapp/app/assets/stylesheets/static_pages.scss */
+  .pull-left, .pull-left a, .pull-right {
+    font-size: 10px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+body{
+	margin: 0px;
+	padding-top: 50px;
+}
+
+
+.main-navbar{
+	margin-bottom: 0px;
+	border: 0px;
+}
+
+.about-page{
+	font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+	color: #696969;
+	font-weight: 900; 
+}
+
+.contact-header{
+	text-align: center;
+	font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
+}
+
+
+.form-control{
+	width: 100%;
+}
+
+
+
+
+/*for form search field
+*/.search-form{
+	padding-top: 5px;
+}
+
+
+/*for making the button of search a bit smaller to adjust the size
+*/  
+
+.search-button{
+	display: inline-block;
+  float: right;
+  height: 35px;
+  border-radius: 0 25px 25px 0;
+}
+
+.search-box {
+  width: auto;
+  display: inline-block;
+  float: left;
+}
+
+
+.form-center{
+	text-align: center;
+}
+
+/*for setting the display alert message 
+*/
+.alert-message {
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+/*when the size of the screen is 500px or less
+*/
+@media only screen and (max-width: 600px) {
+  body {
+      background-color: #C0C0C0;
+  }
+  .product-style h2{
+  	font-size: 20px;
+  }
+}

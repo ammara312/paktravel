@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font-stack: 'Roboto', cursive,helvetica, arial, sans-serif;
+
 .product-header, .product-style h2, p{
 
-	font-family: 'Roboto', cursive,helvetica, arial, sans-serif;
-
+	font-family: $font-stack;
 }
+
 .product-style{
   padding-bottom: 30px;
 
@@ -24,6 +26,39 @@
 
 .product-row{
   padding-bottom: 30px;
+}
+
+/*for show page of product container*/
+.product-container{
+  padding-top: 15px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.add-new-btnProduct{
+  float: right;
+  padding: 20px 15px;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+.btn-colr{
+  color: #fff;
+  background-color: black;
+  border-color: #cc3048;
+  border-radius: 50px 50px 5px 5px;
+}
+
+.add-new-btnProduct a:hover, .product-show-btn a:hover{
+  color: black;
+  border-color: black;
+  background-color: #e2b02d;
+}
+    
+.add-new-btnProduct a:visited, .product-show-btn a:visited{
+  color: #fff;
 }
 
 /*for text moving pattern*/
@@ -62,3 +97,38 @@
   padding: 20px;
   font-size: 2.5em;
 }
+
+
+
+/*to add some taste in pagination for products page and comments area
+*/
+.flickr_pagination {
+  display: block;
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+.flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+  padding: 0.2em 0.5em; }
+.flickr_pagination .disabled {
+  color: #aaaaaa; }
+.flickr_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  color: #ff0084; }
+.flickr_pagination a {
+  border: 1px solid #dddddd;
+  color: #0063dc;
+  text-decoration: none; }
+.flickr_pagination a:hover, .flickr_pagination a:focus {
+  border-color: #003366;
+  background: #0063dc;
+  color: white; }
+.flickr_pagination .page_info {
+  color: #aaaaaa;
+  padding-top: 0.8em; }
+.flickr_pagination .previous_page, .flickr_pagination .next_page {
+  border-width: 2px; }
+.flickr_pagination .previous_page {
+  margin-right: 1em; }
+.flickr_pagination .next_page {
+  margin-left: 1em; }

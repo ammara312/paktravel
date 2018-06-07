@@ -88,4 +88,29 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # This will enable your ActionMailer to use the SendGrid plugin to send out emails from Heroku
+
+  ActionMailer::Base.smtp_settings = {
+  address: 'smtp.sendgrid.net',
+  port: '587',
+  authentication: :plain,
+  user_name: ENV['SENDGRID_USERNAME'],
+  password: ENV['SENDGRID_PASSWORD'],
+  domain: 'heroku.com',
+  enable_starttls_auto: true
+  }
+
+  config.cache_store = :dalli_store,
+    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+    {:username => ENV["MEMCACHIER_USERNAME"],
+     :password => ENV["MEMCACHIER_PASSWORD"],
+     :failover => true,
+     :socket_timeout => 1.5,
+     :socket_failure_delay => 0.2,
+     :down_retry_delay => 60
+    }
+
+  config.web_socket_server_url = "wss://meinbakerie.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://meinbakerie.herokuapp.com', 'http://meinbakerie.herokuapp.com']
 end
